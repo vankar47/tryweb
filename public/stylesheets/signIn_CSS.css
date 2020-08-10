@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: Mairon;
+  src: url("/fonts/mairon-font/Mairon-KYre.ttf");
+}
+@font-face {
+  font-family: MiddleEarth;
+  src: url("/fonts/middleearth-font/Middleearth-ao6m.ttf");
+}
+
+:root {
+  --brown: #2b1d0e;
+  --yellow: rgb(218, 165, 32);
+  --golden: rgb(218, 165, 32);
+  --green: #7cfc00;
+  --blue: #2389da;
+  --myFont: "Mairon", cursive;
+}
+
+.font {
+  font-family: var(--myFont);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+.bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 53.8em;
+}
+
+h1 {
+  font-size: 10em;
+  padding: 1em;
+}
+
+.text_clr {
+  color: var(--yellow) !important;
+}
+
+.text_clr2 {
+  color: var(--brown) !important;
+}
+
+.so {
+  width: 100%;
+  text-align: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+.si {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 2em;
+  border: dotted 0.09em var(--yellow);
+  border-radius: 10%;
+  background-color: rgba(70, 28, 4, 0.486);
+  text-align: justify;
+}
+
+.inp {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.icon {
+  padding: 1em;
+  background-color: var(--brown);
+  color: var(--yellow);
+  min-width: 3em;
+  text-align: center;
+}
+
+.inp_fld {
+  width: 20em;
+  padding: 0.5em;
+  outline: none;
+}
+
+.inp_message {
+  width: 23.5em;
+  padding: 0.5em;
+  outline: none;
+  height: 15em;
+}
+
+.inp_fld:focus {
+  border: 0.2em solid var(--brown);
+}
+
+.btn {
+  background-color: var(--yellow);
+  color: var(--brown);
+  padding: 10em 15em;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.btn:hover {
+  opacity: 1;
+}

@@ -1,0 +1,15 @@
+extends layout2
+
+block content
+  .container.center-block.body.px-5
+    form.so(action='#')
+      h1.col-12.text-center
+        | Sign In to Return to the Fellowship!
+      .si
+        .inp
+          i.fa.fa-envelope.icon
+          input#emailIp.inp_fld(type='email' placeholder='Email' name='emailIp' required='')
+        .inp
+          i.fa.fa-key.icon
+          input#pwdIp.inp_fld(type='password' placeholder='Password' name='pwdIp' required='')
+        button.btn(type='submit') Return To The Fellowship!

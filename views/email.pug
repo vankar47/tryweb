@@ -1,0 +1,14 @@
+extends layout2
+
+block content
+  .container.center-block.body.px-5
+    form.so(action='#')
+      h1.col-12.text-center
+        | E-Mail Us
+      .si
+        .inp
+          i.fa.fa-envelope.icon
+          input#emailIp.inp_fld(type='email' placeholder='Email' name='emailIp' required='')
+        .inp
+          textarea#msg.inp_message(type='text' name='pwdIp' placeholder='Type Your Message Here ...' required='')
+        button.btn(type='submit') Done!

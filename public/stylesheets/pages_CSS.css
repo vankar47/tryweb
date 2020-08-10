@@ -1,0 +1,237 @@
+@charset "utf-8";
+/* CSS Document */
+@charset "utf-8";
+/* CSS Document */
+
+/*custom font*/
+@font-face {
+  font-family: Mairon;
+  src: url("/fonts/mairon-font/Mairon-KYre.ttf");
+}
+@font-face {
+  font-family: MiddleEarth;
+  src: url("/fonts/middleearth-font/Middleearth-ao6m.ttf");
+}
+
+:root {
+  --brown: #2b1d0e;
+  --yellow: #efcc00;
+  --golden: rgb(241, 240, 141);
+  --green: #7cfc00;
+  --blue: #2389da;
+  --myfont_logo: "MiddleEarth", "cursive";
+  --myFont: "Mairon", cursive;
+}
+
+/*Header Styling*/
+.headingmain {
+  margin-top: 0px;
+  font-size: 40px;
+  text-decoration: none !important;
+  color: var(--golden) !important;
+  padding-top: 1vw;
+}
+
+.logo {
+  height: 4.2vw;
+  width: 4vw;
+  justify-self: end;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.main_body {
+  padding-top: 1.2em;
+  background-color: var(--golden);
+  margin: -2em;
+  padding-bottom: 1.2em;
+  width: 1550px;
+}
+
+.pstn {
+  position: relative;
+  z-index: 0;
+  margin-top: -2em;
+  padding: 0.7em;
+}
+.font-head {
+  font-family: var(--myfont_logo);
+}
+
+.font {
+  font-family: var(--myFont);
+}
+
+.head_clrs {
+  background: linear-gradient(to right, #2b1d0e, #654321);
+  color: var(--golden);
+  height: 10vw;
+}
+
+.header_col2 {
+  padding-top: 1.5rem;
+  padding-right: 2em;
+}
+
+.header_col1 {
+  padding: 1em;
+}
+
+/*NavBar Styling*/
+.pstn_main {
+  position: absolute;
+  z-index: 1;
+  top: 5em;
+}
+.nav_style {
+  background: linear-gradient(to right, var(--yellow), var(--golden));
+  color: var(--brown);
+}
+
+.drop {
+  background-color: var(--blue);
+}
+
+.header_search_form {
+  display: block;
+}
+
+.search_input {
+  width: 14em;
+  height: 3em;
+  border: solid 0.01em var(--blue);
+  border-radius: 30%;
+  outline: none;
+  text-align: center;
+  font-size: 1em;
+  color: var(--blue);
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.search_input:focus,
+.search_input:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 0.1em 0 var(--green) inset, 0 0 0.1em 0 var(--green);
+}
+
+.header_search_button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 1em;
+  width: 44px;
+  height: 39px;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/*First-Slider CSS*/
+
+hr {
+  background-color: var(--brown);
+}
+
+.sld {
+  width: 100%;
+  height: 40vw;
+}
+
+.site-slider {
+  position: relative;
+}
+
+.position-top {
+  position: absolute;
+  top: 50%;
+}
+
+.products {
+  width: 100%;
+  margin-top: 1%;
+  letter-spacing: 1px;
+}
+.heading {
+  font-size: 2vw;
+  padding: 1rem;
+  background: linear-gradient(to right, #2b1d0e, #654321);
+  color: var(--golden);
+  margin: 2vw;
+  border-radius: 20%;
+}
+
+.bk {
+  height: 30vw;
+  width: 100%;
+}
+
+.bk1 {
+  height: 25vw;
+  width: 80%;
+  padding-left: 3em;
+}
+
+.row {
+  margin-top: 30px;
+}
+img {
+  width: 100%;
+}
+.product-bottom .fa {
+  color: var(--golden);
+  font-size: 10px;
+}
+
+.product-bottom .h5 {
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.overlay {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  margin-left: 0;
+  width: 70px;
+}
+
+.product-top:hover .overlay {
+  opacity: 1;
+  margin-left: 5%;
+  transition: 0.5s;
+}
+
+.overlay .fa {
+  cursor: pointer;
+  background: linear-gradient(to right, var(--yellow), var(--golden));
+  color: var(--brown);
+  height: 35px;
+  width: 35px;
+  font-size: 20px;
+  padding: 7px;
+  margin: 1%;
+}
+
+.overlay .btn-secondary {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/*Footer Styling*/
+.foot {
+  background: linear-gradient(to right, #2b1d0e, #654321);
+  color: var(--golden);
+}

@@ -1,0 +1,110 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title The Bag End
+  // Bootstrap CDN
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
+  // CSS linking
+  link(rel='stylesheet' type='text/css' href='/stylesheets/Main_CSS.css')
+  // Google Font
+  link(href='https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap' rel='stylesheet')
+  // Font Awesome CDN
+  link(href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous')
+  script(src='https://kit.fontawesome.com/23412c6a8d.js')
+  // Slider CDN
+  link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css')
+  link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+header
+  .container-fluid.head_clrs.pstn
+    .row
+      .col-12.col-md-6.col-sm-12
+        a.font-head.headingmain.header_col1(href='/main')
+          img.logo(src='/images/bagendlogo2.png' alt='logo')
+          |  The Bag End
+      .col-12.col-md-6.col-sm-12.text-right.header_col2
+        p.px-2
+          a(href='/signin')
+            | Return to the Fellowship
+          | |
+          a(href='/signup')
+            | Join the Fellowship
+  .container-fluid.pstn_main
+    nav.navbar.navbar-expand-lg.nav_style(style='border-radius:15%;')
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item.active.p-2
+            a.nav-link(href='/main')
+              | Home
+              span.sr-only (current)
+          li.nav-item.dropdown.p-2
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              | Books
+            .dropdown-menu.drop(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='/paperbacks') Paper-Backs
+              a.dropdown-item(href='/hardcovers') Hard-Covers
+          li.nav-item.dropdown.p-2
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              | Digital Books
+            .dropdown-menu.drop(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='/ebooks') E-books
+              a.dropdown-item(href='/audiobooks') Audio Books
+          li.nav-item.dropdown.p-2
+            a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              | Collectibles
+            .dropdown-menu.drop(aria-labelledby='navbarDropdown')
+              a.dropdown-item(href='/comics') Comics
+              a.dropdown-item(href='/magzines') Magazines
+              a.dropdown-item(href='/others') Others
+      .navbar-nav.header.search
+        li.nav-item
+          form#header_search_form(action='#')
+            input.search_input(type='text' required='')
+            button.header_search_button
+              i.fas.fa-search
+// main
+main
+  block content
+footer.page-footer.font-small.foot.pt-4.px-0
+  .container-fluid.text-center.text-md-left
+    .row
+      .col-md-6.mt-md-0.mt-3
+        h5 ABOUT US
+        p
+          | The Bag End is a Hobbit themed online bookstore for a diversity of readers to get paperbacks, hardcovers, e-books, audiobooks, comics, magazines and other collectibles. The Bag End is all that you need.
+      hr.clearfix.w-100.d-md-none.pb-3
+      .col-md-3.mb-md-0.mb-3
+        h5.text-uppercase Help and Contact
+        ul.list-unstyled
+          li
+            a(href='/email') E-mail Us
+          li
+            a(href='#!' data-toggle='popover' data-trigger='focus' title='Fax Number' data-content='+44-208-1234567') Fax Us
+          li
+            a(href='#!' data-toggle='popover' data-trigger='focus' title='Contact Number' data-content='+44 20 7234 3456') Call Us
+          li
+            a(href='/terms') Terms and Conditions
+      .col-md-3.mb-md-0.mb-3
+        h5.text-uppercase Quick Finder
+        ul.list-unstyled
+          li
+            a(href='#bestSellers') Best Sellers
+          li
+            a(href='#newReleases') New Releases
+          li
+            a(href='/others') Fandom
+  .footer-copyright.text-center.py-3
+    | &copy; 2020 Copyright:
+    a(href='/main')  TheBagEnd.com
+// Jquery CDN
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous')
+script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js')
+script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js')
+script(src='/javascripts/Main.js')

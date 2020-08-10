@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+  font-family: Mairon;
+  src: url("/fonts/mairon-font/Mairon-KYre.ttf");
+}
+@font-face {
+  font-family: MiddleEarth;
+  src: url("/fonts/middleearth-font/Middleearth-ao6m.ttf");
+}
+
+* {
+  font-family: "MiddleEarth";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #2b1d0e, #654321);
+  z-index: -1;
+}
+
+.logo {
+  height: 8.5vw;
+  width: 8vw;
+  margin-top: 1vw;
+  justify-self: end;
+}
+nav {
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 10%;
+  min-height: 10vh;
+  align-items: center;
+}
+.titlee {
+  grid-column: 2/3;
+  font-size: 4vw;
+  color: rgb(218, 165, 32);
+  font: "MiddleEarth";
+}
+section {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  height: 80%;
+  width: 100%;
+  position: relative;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.headline {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  font-size: 4vw;
+  color: white;
+  transform: translate(-20%, -70%);
+  z-index: 3;
+}
+
+.hero::after {
+  content: "";
+  background: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+.anm {
+  animation-name: ex1;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 1vw;
+  border: 0.1vw solid rgb(218, 165, 32);
+  border-radius: 0.5vw;
+  margin-right: 10vw;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-size: 2vw;
+  text-align: center;
+  color: rgb(218, 165, 32);
+  transition: all 0.15s;
+}
+a.btn:hover {
+  color: #2b1d0e;
+  background-color: rgb(218, 165, 32);
+}
+@media all and (max-width: 30em) {
+  a.btn {
+    display: block;
+  }
+}
+
+@keyframes ex1 {
+  from {
+    color: #2b1d0e;
+  }
+  to {
+    color: rgb(218, 165, 32);
+  }
+}
+
+.wel {
+  position: absolute;
+  top: 75%;
+  left: 28%;
+}
