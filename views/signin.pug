@@ -2,30 +2,14 @@ extends layout2
 
 block content
   .container.center-block.body.px-5
-  form.so(action='#' method='POST')
-    h1.col-12.text-center
-      | Sign Up to join the Fellowship!
-    .si.text_clr2
-      .inp
-        i.fa.fa-envelope.icon
-        input#emailIp.inp_fld(type='email' placeholder='Email' name='emailIp' required='')
-        i.far.fa-user.icon
-        input#nameIp.inp_fld(type='text' placeholder='Full Name' name='nameIp' required='')
-      .inp
-        i.fa.fa-key.icon
-        input#pwdIp.inp_fld(type='password' placeholder='Password' name='pwdIp' required='')
-        i.fa.fa-key.icon
-        input#pwdIp.inp_fld(type='password' placeholder='Re-enter Password' name='pwdIp' required='')
-      .inp
-        i.fas.fa-address-card.icon
-        input#addIp.inp_fld(type='text' placeholder='Address' name='addIp' required='')
-        i.fas.fa-city.icon
-        input#cityIp.inp_fld(type='text' placeholder='City' name='cityIp' required='')
-      .inp
-        i.far.fa-credit-card.icon
-        input#cardIp.inp_fld(type='number' placeholder='Credit Card Number' name='cardIp' required='')
-        i.fas.fa-calendar-times.icon
-        input#ExpIp.inp_fld(type='text' placeholder='Expiry Date' name='expIp' required='')
-      form(action='Main.html')
-        button.btn(type='submit') I&apos;m Ready to be Part of the Fellowship!
-
+    form.so(action='/signin' method="post")
+      h1.col-12.text-center
+        | Sign In to Return to the Fellowship!
+      .si
+        .inp
+          i.fa.fa-envelope.icon
+          input#emailIp.inp_fld(type='email' placeholder='Email' name='emailIp' required='')
+        .inp
+          i.fa.fa-key.icon
+          input#pwdIp.inp_fld(type='password' placeholder='Password' name='pwdIp' required='')
+        button.btn(type='submit') Return To The Fellowship!
