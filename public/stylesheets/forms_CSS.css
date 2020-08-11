@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+@charset "utf-8";
+/* CSS Document */
+
+/*custom font*/
+@font-face {
+  font-family: Mairon;
+  src: url("/fonts/mairon-font/Mairon-KYre.ttf");
+}
+@font-face {
+  font-family: MiddleEarth;
+  src: url("/fonts/middleearth-font/Middleearth-ao6m.ttf");
+}
+
+:root {
+  --brown: #2b1d0e;
+  --yellow: #efcc00;
+  --golden: rgb(241, 240, 141);
+  --green: #7cfc00;
+  --blue: #2389da;
+  --myfont_logo: "MiddleEarth", "cursive";
+  --myFont: "Mairon", cursive;
+}
+
+.bgbody {
+  background-color: var(--golden);
+  font-family: var(--myFont);
+  color: var(--brown);
+  padding: 15px;
+}
+
+.butt {
+  font-size: 1.5vw;
+  padding: 5px;
+  background: linear-gradient(to right, #2b1d0e, #654321);
+  color: var(--golden);
+}
+
+th,
+td {
+  border: 10px var(--brown) solid;
+  border-collapse: collapse;
+  color: var(--brown);
+}
+table {
+  margin-top: -150px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+  margin-top: -130px;
+  margin-left: 180px;
+}
+.st {
+  line-height: 40px;
+  padding-left: 50px;
+  padding-top: 200px;
+}
+
+.bt {
+  border: none;
+  font-size: 30px;
+}
+
+.nb {
+  border: none;
+}
+
+.formm {
+  width: 50%;
+  height: 50px;
+}
+.f {
+  font-size: 230px;
+  text-align: right;
+  line-height: 153px;
+}
+.fr {
+  float: right;
+  margin-right: -50px;
+  margin-left: -300px;
+  margin-top: -360px;
+}
+.formm input {
+  width: 100%;
+  height: 100%;
+
+  padding-top: 20px;
+
+  border: none;
+  border-bottom: var(--brown) solid;
+}
+
+.Top {
+  margin-top: -10px;
+  padding-bottom: 50px;
+}
+
+.blue {
+  color: var(--brown);
+}

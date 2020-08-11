@@ -261,3 +261,18 @@ img {
   background: linear-gradient(to right, #2b1d0e, #654321);
   color: var(--golden);
 }
+
+.butt {
+  font-size: 1.5vw;
+  padding: 5px;
+  background: linear-gradient(to right, #2b1d0e, #654321);
+  color: var(--golden);
+}
+
+table {
+  font-size: 20px;
+}
+.crt {
+  float: left;
+  margin-left: 900px;
+}

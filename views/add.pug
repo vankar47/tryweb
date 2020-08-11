@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Other Products Bag End
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  link(rel='stylesheet' type='text/css' href='/stylesheets/forms_CSS.css')
+  
+body.mt-2.bgbody
+    .container-fluid
+        .media.formm
+            form#form1.formm(action='/add' method="post")
+                h1  ADD PRODUCT
+                br
+                .form-group
+                    strong Image URL: &nbsp; &nbsp; &nbsp; &nbsp;
+                    input#image(type='text' name='image' placeholder = "Image URL" required='')
+                .form-group
+                    strong Product Title: &nbsp; &nbsp;  
+                    input#title(type='text' name='title' placeholder='Enter Title' required='')
+
+                .form-group
+                    strong By: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    input#by(type='text' name = 'by' placeholder='By' required='')
+
+                .form-group
+                    strong Rating(/5): &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    input#rating(type='number' name = 'rating' placeholder='Enter Rating' required='')    
+
+                .form-group
+                    strong Price: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    input#price(type='number' name = 'price' placeholder='Enter price' required='')
+
+                .form-group 
+                    strong Quantity: &nbsp; &nbsp; &nbsp; 
+                    input#quantity(type='number' name = 'quantity' placeholder='Enter quantity' required='')
+                button.button.pt-2.butt(type='submit')  Done 
+            

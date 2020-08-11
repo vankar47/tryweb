@@ -4,7 +4,6 @@ var otherSchema = mongoose.Schema({
   image: String,
   title: String,
   by: String,
-  artist: String,
   price: Number,
   quantity: Number,
   rating: Number,

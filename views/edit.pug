@@ -1,0 +1,36 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Other Products Bag End
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  link(rel='stylesheet' type='text/css' href='/stylesheets/forms_CSS.css')
+  
+body.mt-2.bgbody
+    .container-fluid
+    .media.formm
+        form#form1.formm(action="/edit/"+others._id, method="post")
+            h1  UPDATE PRODUCT
+            br
+            .form-group
+                strong  Image URL: &nbsp; &nbsp; &nbsp; &nbsp;
+                input#image(type='text' name='image' placeholder = "Image URL" required='' value=others.image)
+            .form-group
+                strong Comic Title: &nbsp; &nbsp;
+                input#title(type='text' name='title' placeholder='Enter Title' required='' value=others.title)
+            .form-group
+                strong By: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                input#by(type='text' name='by' placeholder='Enter By' required='' value=others.by)    
+            .form-group
+                strong Rating: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                input#artist(type='text' name='ratings' placeholder='Enter Rating' required='' value=others.artist)    
+            .form-group
+                strong Price: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                input#price(type='number' name='price' placeholder='Enter price' required='' value=others.price)
+            .form-group
+                strong Quantity: &nbsp; &nbsp; &nbsp; 
+                input#quantity(type='number' name='quantity' placeholder='Enter quantity' required='' value=others.quantity)
+            button.button.pt-2.butt(type='submit')  Update
+    
