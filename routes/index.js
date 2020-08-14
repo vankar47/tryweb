@@ -7,6 +7,7 @@ const userSess = require("../middlewares/usersession");
 var q = require("../middlewares/abc");
 var cartMid = require("../middlewares/cartMid");
 const other = require("../models/otherSchema");
+const { assert } = require("@hapi/joi");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -52,7 +53,7 @@ router.post("/signin", userSess, async function (req, res, next) {
     console.log("No User Exists");
     return res.redirect("/signin");
   }
-  if (user.emailIp == "admin@admin.com" && user.pwdIp == "admin")
+  if (user.emailIp == "admin@admin.com" && user.pwdIp == "admin1")
     return res.redirect("/otherAdmin");
   req.session.user = user;
   res.redirect("/other");
@@ -62,6 +63,7 @@ router.get("/add", function (req, res, next) {
 });
 
 router.post("/add", async function (req, res, next) {
+  console.log(req.body);
   let others = new other(req.body);
   await others.save();
   res.redirect("/otherAdmin");
@@ -70,7 +72,7 @@ router.post("/add", async function (req, res, next) {
 router.get("/delete/:id", async function (req, res, next) {
   let others = await other.findByIdAndDelete(req.params.id);
 
-  res.redirect("/comicsAdmin");
+  res.redirect("/otherAdmin");
 });
 
 router.get("/edit/:id", async function (req, res, next) {
@@ -97,13 +99,39 @@ router.post("/signup", async function (req, res, next) {
   });
   if (user) {
     console.log("user exists");
-    res.redirect("/signin");
+    res.status(400).send("User with given email already exists!");
     return;
   }
 
   user = new User(req.body);
-  await user.save();
-  res.redirect("/signin");
+  // var error = user.validateSync();
+  // assert.equal(
+  //   error.errors["pwdIp"].message,
+  //   "password must be atleast 6 letters long!"
+  // );
+
+  // await user.save(function (error) {
+  //   assert.equal(
+  //     error.errors["pwdIp"].message,
+  //     "Password is required and should be atleast 6 letters"
+  //   );
+  //   error = user.validateSync();
+  //   assert.equal(
+  //     error.errors["pwdIp"].message,
+  //     "Password is required and should be atleast 6 letters"
+  //   );
+  // });
+
+  try {
+    const result = await user.save();
+    console.log(result);
+    res.redirect("/signin");
+    return;
+  } catch (err) {
+    errorsig = err.message;
+    res.render("errorsignup", { errorsig });
+    return;
+  }
 });
 
 router.get("/cart", async function (req, res, next) {
