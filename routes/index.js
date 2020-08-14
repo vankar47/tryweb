@@ -1,7 +1,8 @@
+const mongoose = require("mongoose");
 var express = require("express");
 const others = require("../models/otherSchema");
 const User = require("../models/userSchema");
-var router = express.Router();
+var router = express();
 const userSess = require("../middlewares/usersession");
 var q = require("../middlewares/abc");
 var cartMid = require("../middlewares/cartMid");
@@ -21,7 +22,7 @@ router.get("/email", function (req, res, next) {
 });
 
 router.get("/other", async function (req, res, next) {
-  var other = await others.find();
+  var other = await others.find({});
   console.log(other);
   res.render("other", { other });
 });
@@ -51,7 +52,7 @@ router.post("/signin", userSess, async function (req, res, next) {
     console.log("No User Exists");
     return res.redirect("/signin");
   }
-  if (user.emailIp == "johnvegas72@gmail.com" && user.pwdIp == "xyz121")
+  if (user.emailIp == "admin@admin.com" && user.pwdIp == "admin")
     return res.redirect("/otherAdmin");
   req.session.user = user;
   res.redirect("/other");
@@ -87,14 +88,18 @@ router.post("/edit/:id", async function (req, res, next) {
   others.quantity = req.body.quantity;
   await others.save();
   res.redirect("/otherAdmin");
+  return;
 });
 
 router.post("/signup", async function (req, res, next) {
   let user = await User.findOne({
     emailIp: req.body.emailIp,
   });
-  if (user) console.log("user exists");
-  res.redirect("/signin");
+  if (user) {
+    console.log("user exists");
+    res.redirect("/signin");
+    return;
+  }
 
   user = new User(req.body);
   await user.save();

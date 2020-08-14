@@ -9,6 +9,15 @@ var session = require("express-session");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
+// const { MongoClient } = require("mongodb");
+
+const url =
+  "mongodb+srv://admin:admin@cluster0.iuv0n.mongodb.net/bagend?retryWrites=true&w=majority";
+// const client = new MongoClient(url, {
+//   useUnifiedTopology: true,
+//   useNewUrlParser: true,
+// });
+
 var app = express();
 
 app.use(
@@ -46,12 +55,32 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
+  return;
 });
-mongoose
-  .connect("mongodb://localhost/bagend", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to Mongo...."))
-  .catch((error) => console.log(error.message));
-module.exports = app;
+
+// async function run() {
+//   try {
+//     await client.connect();
+//     console.log("Connected correctly to server");
+//     const db = client.db("bagend");
+//     const col = db.collection("users");
+//     const col2 = db.collection("others");
+//   } catch (err) {
+//     console.log(err.stack);
+//   } finally {
+//     await client.close();
+//   }
+// }
+
+//run().catch(console.dir);
+
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+mongoose.connect("connected", () => {
+  console.log("Mongoose is connected!");
+});
+
+module.exports = { app, mongoose };
