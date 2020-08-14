@@ -74,13 +74,12 @@ app.use(function (err, req, res, next) {
 
 //run().catch(console.dir);
 
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-mongoose.connect("connected", () => {
-  console.log("Mongoose is connected!");
-});
+mongoose
+  .connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connected to Mongo...."))
+  .catch((error) => console.log(error.message));
 
 module.exports = { app, mongoose };
