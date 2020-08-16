@@ -30,8 +30,8 @@ router.get("/email", function (req, res, next) {
 router.post("/email", async function (req, res, next) {
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
       user: req.body.emailIp,
       pass: req.body.pwdIp,
