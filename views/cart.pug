@@ -13,6 +13,7 @@ head
     
 
 body.mt-2.bgbody
+  h1.heading(style='text-align:center;') Your Current Cart
   .container-fluid.ml-2.text-secondary
     .media.formm
       .st
@@ -28,8 +29,10 @@ body.mt-2.bgbody
             each item in cart
               -total += Number(item.price)
               tr
-                td.pl-5.pr-5.pt-2.pb-2=item.title
-                td.pl-5.pr-5.pt-2.pb-2= 1
+                td.pl-5.pr-5.pt-2.pb-2
+                  img(src = item.image , alt = 'img', height='300px' ) 
+                  p=item.title
+                td.pl-5.pr-5.pt-2.pb-2=1
                 td.pl-5.pr-5.pt-2.pb-2=item.price
                 td.pl-5.pr-5.pt-2.pb-2.nb 
                   a(href='/cart/remove/'+item._id class = "blue bt") &times;

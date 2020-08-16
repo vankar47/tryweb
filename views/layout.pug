@@ -22,7 +22,7 @@ header
   .container-fluid.head_clrs.pstn
     .row
       .col-12.col-md-6.col-sm-12
-        a.font-head.headingmain.header_col1(href='/main')
+        a.font-head.headingmain.header_col1(href='/other')
           img.logo(src='/images/bagendlogo2.png' alt='logo')
           |  The Bag End
       .col-12.col-md-6.col-sm-12.text-right.header_col2
@@ -88,16 +88,16 @@ footer.page-footer.font-small.foot.pt-4.px-0
           li
             a(href='#!' data-toggle='popover' data-trigger='focus' title='Contact Number' data-content='+44 20 7234 3456') Call Us
           li
-            a(href='/terms') Terms and Conditions
+            a(href='/terms&conditions') Terms and Conditions
       .col-md-3.mb-md-0.mb-3
         h5.text-uppercase Quick Finder
         ul.list-unstyled
           li
-            a(href='#bestSellers') Best Sellers
+            a(href='#bestSellers' onclick="return false;") Best Sellers
           li
-            a(href='#newReleases') New Releases
+            a(href='#newReleases' onclick="return false;") New Releases
           li
-            a(href='/others') Fandom
+            a(href='/other') Others
   .footer-copyright.text-center.py-3
     | &copy; 2020 Copyright:
     a(href='/main')  TheBagEnd.com

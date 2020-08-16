@@ -8,6 +8,7 @@ var q = require("../middlewares/abc");
 var cartMid = require("../middlewares/cartMid");
 const other = require("../models/otherSchema");
 const { assert } = require("@hapi/joi");
+const nodemailer = require("nodemailer");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -18,8 +19,40 @@ router.get("/main", function (req, res, next) {
   res.render("main");
 });
 
+router.get("/terms&conditions", function (req, res, next) {
+  res.render("terms");
+});
+
 router.get("/email", function (req, res, next) {
   res.render("email");
+});
+
+router.post("/email", async function (req, res, next) {
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: req.body.emailIp,
+      pass: req.body.pwdIp,
+    },
+  });
+  try {
+    let info = await transporter.sendMail({
+      from: req.body.emailIp,
+      to: "johnvegas72@gmail.com",
+      subject: "About Bagend",
+      text: req.body.msgem,
+    });
+    console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    res.redirect("/other");
+    return;
+  } catch (err) {
+    errorsig = err.message;
+    res.render("erroremail", { errorsig });
+    return;
+  }
 });
 
 router.get("/other", async function (req, res, next) {

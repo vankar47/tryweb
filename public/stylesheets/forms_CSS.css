@@ -48,6 +48,15 @@ table {
   text-align: center;
 }
 
+.heading {
+  font-size: 2vw;
+  padding: 1rem;
+  background: linear-gradient(to right, #2b1d0e, #654321);
+  color: var(--golden);
+  margin: 2vw;
+  border-radius: 20%;
+}
+
 h2 {
   font-size: 40px;
   margin-top: -130px;

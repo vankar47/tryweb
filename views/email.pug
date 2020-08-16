@@ -2,13 +2,17 @@ extends layout2
 
 block content
   .container.center-block.body.px-5
-    form.so(action='#')
+    form.so(action='/email' method='POST' id="#emails")
       h1.col-12.text-center
         | E-Mail Us
+      p To email us, you have to enable your secures app access option in your mail service provider's settings.
       .si
         .inp
           i.fa.fa-envelope.icon
           input#emailIp.inp_fld(type='email' placeholder='Email' name='emailIp' required='')
         .inp
-          textarea#msg.inp_message(type='text' name='pwdIp' placeholder='Type Your Message Here ...' required='')
+          i.fa.fa-envelope.icon
+          input#pwdIp.inp_fld(type='password' placeholder='Password' name='pwdIp' required='')
+        .inp
+          textarea#msg.inp_message(type='text' name='msgem' placeholder='Type Your Message Here ...' required='')
         button.btn(type='submit') Done!
