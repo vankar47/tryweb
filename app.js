@@ -9,6 +9,8 @@ var session = require("express-session");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
+var sessionAuth = require("./middlewares/usersession");
+
 // const { MongoClient } = require("mongodb");
 
 const url =
@@ -28,6 +30,8 @@ app.use(
     cookie: { maxAge: 60000 },
   })
 );
+
+app.use(sessionAuth);
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");

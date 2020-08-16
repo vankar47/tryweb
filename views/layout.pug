@@ -18,7 +18,7 @@ head
   link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 
-header
+header.hepos
   .container-fluid.head_clrs.pstn
     .row
       .col-12.col-md-6.col-sm-12
@@ -27,11 +27,19 @@ header
           |  The Bag End
       .col-12.col-md-6.col-sm-12.text-right.header_col2
         p.px-2
-          a(href='/signin')
-            | Return to the Fellowship
-          | |
-          a(href='/signup')
-            | Join the Fellowship
+          if user
+              a(href='/logout')
+                | Leave &nbsp;
+              | | &nbsp;
+              a(href='/cart')
+                | &nbsp; Reveal  
+
+          if !user 
+             a(href='/signin')
+                | Return to the Fellowship &nbsp;
+             | |
+             a(href='/signup')
+                | &nbsp; Join the Fellowship
   .container-fluid.pstn_main
     nav.navbar.navbar-expand-lg.nav_style(style='border-radius:15%;')
       button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
@@ -63,7 +71,7 @@ header
               a.dropdown-item(href='/other') Others
       .navbar-nav.header.search
         li.nav-item
-          form#header_search_form(action='#')
+          form#header_search_form(action='#serachnotyetimplemented')
             input.search_input(type='text' required='')
             button.header_search_button
               i.fas.fa-search

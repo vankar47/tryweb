@@ -17,9 +17,9 @@ block content
                 .product-top
                     img.bk(src=others.image alt='book1')
                     .overlay
-                        a(href="#eye"+others._id, class=btn btn-secondary)
+                        a(href="#eye"+others._id, onclick="return false;", class=btn btn-secondary)
                             i.fa.fa-eye
-                        a(href="#heart"+others._id, class=btn btn-secondary)
+                        a(href="#heart"+others._id, class=btn btn-secondary, onclick="return false;")
                             i.fa.fa-heart-o
                         a(href="/cart/AddtoCart/"+others._id, class=btn btn-secondary)
                             i.fa.fa-shopping-cart

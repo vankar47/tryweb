@@ -21,6 +21,14 @@
   --myFont: "Mairon", cursive;
 }
 
+.hepos {
+  position: fixed;
+  top: 0rem;
+  left: 0rem;
+  right: 0rem;
+  z-index: 100;
+}
+
 /*Header Styling*/
 .headingmain {
   margin-top: 0px;
@@ -75,7 +83,7 @@ a {
 .pstn_main {
   position: absolute;
   z-index: 1;
-  top: 5em;
+  top: 7em;
 }
 .nav_style {
   background: linear-gradient(to right, var(--yellow), var(--golden));
@@ -277,7 +285,7 @@ table {
   margin-left: 900px;
 }
 .carto {
-  position: relative;
-  left: 1rem;
-  bottom: 4rem;
+  position: fixed;
+  left: 50rem;
+  top: 13rem;
 }

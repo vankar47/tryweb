@@ -55,6 +55,11 @@ router.post("/email", async function (req, res, next) {
   }
 });
 
+router.get("/logout", function (req, res, next) {
+  req.session.user = null;
+  res.redirect("/other");
+});
+
 router.get("/other", async function (req, res, next) {
   var other = await others.find({});
   console.log(other);
