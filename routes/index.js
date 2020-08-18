@@ -36,6 +36,10 @@ router.post("/email", async function (req, res, next) {
       user: req.body.emailIp,
       pass: req.body.pwdIp,
     },
+    tls: {
+      // do not fail on invalid certs
+      rejectUnauthorized: false,
+    },
   });
   try {
     let info = await transporter.sendMail({
